@@ -44,12 +44,12 @@ function lightOn() {
     overlay.style.pointerEvents = "None";
 }
 
-function linkSite2() {
-    window.location.href = "extra.html"
-}
-
 function linkSite1() {
     window.location.href = "intro.html";
+}
+
+function linkSite2() {
+    window.location.href = "extra.html"
 }
 
 function bingpot() {
@@ -57,6 +57,9 @@ function bingpot() {
         if (this.value.toLowerCase() === "bingpot") {
             countdownMeet();
             document.getElementById("countdown").style.display = "block";
+            const link = document.getElementById("conti");
+            link.innerText = "continue";
+            link.href = "part2.html";
         };
     });
 }
@@ -95,7 +98,7 @@ function fireworks() {
 };
 
 function countdownMeet() {
-    var endDate = new Date("Apr 18, 2026 00:00:00").getTime();
+    var endDate = new Date("Apr 18, 2026 12:00:00").getTime();
     var x = setInterval(function () {
         var now = new Date().getTime();
         var distance = endDate - now;
@@ -108,7 +111,7 @@ function countdownMeet() {
 
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("countdown").innerHTML = "I SEE U <br> (if not now then later)";
+            document.getElementById("countdown").innerHTML = "I SEE U";
         }
     }, 1000);
 };
